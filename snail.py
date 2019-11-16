@@ -36,4 +36,20 @@ MATRIX = [
     [13, 12, 11, 10, 9],
 ]
 
-print(snail_sort(MATRIX))
+
+def snail(array):
+    a = []
+    while array:
+        a.extend(list(array.pop(0)))
+        array = list(zip(*array))
+        array.reverse()
+    return a
+
+MATRIX = [
+    [1, 2, 3, 4, 5],
+    [16, 17, 18, 19, 6],
+    [15, 24, 25, 20, 7],
+    [14, 23, 22, 21, 8],
+    [13, 12, 11, 10, 9],
+]
+snail(MATRIX)
